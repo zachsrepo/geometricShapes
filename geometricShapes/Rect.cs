@@ -6,26 +6,20 @@ using System.Threading.Tasks;
 
 namespace geometricShapes
 {
-    internal class Rect
+    internal class Rect : Quad
     {
-        public int Longside { get; set; }
-        public int Shortside { get; set; }
-
-        public int Perimeter()
+        // if we got rid of this Perimeter statment it would be calculated in the quad class.
+        //public override int Perimeter()
+        //{
+        //    return base.Perimeter();
+        //}
+        public virtual int Area()
         {
-            return (Longside + Shortside) * 2;
-        }
-        public int Area()
-        {
-            return Longside * Shortside;
+            return Side1 * Side2;
         }
         //default constructor
-        public Rect() { }
+        public Rect() : base() { }
 
-        public Rect(int longside, int shortside)
-        {
-            Longside = longside;
-            Shortside = shortside;
-        }
+        public Rect(int side1, int side2) : base(side1, side2, side1, side2) { }
     }
 }

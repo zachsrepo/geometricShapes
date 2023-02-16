@@ -15,7 +15,7 @@ namespace geometricShapes
         public int Side4 { get; set; }
 
         //instance method for perimeter
-        public int Perimeter()
+        public virtual int Perimeter()
         {
             return Side1 + Side2 + Side3 + Side4;
         }
